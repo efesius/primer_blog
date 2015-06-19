@@ -7,11 +7,9 @@ class Post(models.Model):
     titulo = models.CharField(max_length=200)
     contenido = models.TextField()
     fecha_de_creacion = models.DateTimeField(
-        default=timezone.now
-        )
+        default=timezone.now)
     fecha_de_publicacion = models.DateTimeField(
-        blank=True, null=True
-        )
+        blank=True, null=True)
 
     def publicar(self):
         self.fecha_de_publicacion = timezone.now()

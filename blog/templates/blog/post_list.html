@@ -4,7 +4,18 @@
     <title>Mi primer blog</title>
 </head>
 <body>
-    <h1>1 post</h1>
-    <h1>2 post</h1>
+    {% for post in posts %}
+        <div>
+            <p>
+                Publicado: {{ post.fecha_de_publicacion }}
+            </p>
+            <h1><a href="">
+                {{ post.titulo }}
+            </a></h1>
+            <p>
+                {{ post.contenido|linebreaks }}
+            </p>
+        </div>
+    {% endfor %}
 </body>
 </html>
